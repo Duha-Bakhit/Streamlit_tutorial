@@ -5,3 +5,4 @@
  base64  
 scikit-learn
 matplotlib
+StandardScaler
