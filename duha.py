@@ -29,34 +29,34 @@ st.image("COVID.png")
 st.markdown('Dataset :')
 data=pd.read_csv("day_wise.csv.xls")
 
-dt = data.drop(["Date"], axis=1)
+dt1 = data.drop(["Date"], axis=1)
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 sc.fit(dt)
-dtt = sc.transform(dt)
-dt = pd.DataFrame(dtt, columns=dt.columns)
-d = pd.concat([data["Date"], dt], axis=1)
+dtt = sc.transform(dt1)
+dt1 = pd.DataFrame(dtt, columns=dt.columns)
+d = pd.concat([data["Date"], dt1], axis=1)
 st.write(data.head())
 st.markdown("General Bar Chart for standardized data of various Attributes")
-st.bar_chart(dt)
+st.bar_chart(dt1)
 import matplotlib.pyplot as plt
 
 agree= st.button("click to see Histogram")
 if agree:
     st.markdown("General Histogram for standardized data of various Attributes")
     fig, ax = plt.subplots()
-    ax.hist(dt, bins=15)
+    ax.hist(dt1, bins=15)
     st.pyplot(fig)
 
 agree= st.button("click to see Area chart")
 if agree:
     st.markdown("General Area Chart for standardized data of various Attributes")
-    st.area_chart(dt)
+    st.area_chart(dt1)
 
 agree= st.button("click to see line chart")
 if agree:
     st.markdown("General Line Chart for standardized data Chart of various Attributes")
-    st.line_chart(dt)
+    st.line_chart(dt1)
     
 
 
