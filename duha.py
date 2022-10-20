@@ -24,8 +24,8 @@ def get_value(val,my_dict):
 
 
 
-st.title('http://www.un.org/development/desa/disabilities/wp-content/uploads/sites/15/2020/03/1583952355.1997.jpg')
-st.image("COVID.png")
+st.title('Covid:')
+st.image("http://www.un.org/development/desa/disabilities/wp-content/uploads/sites/15/2020/03/1583952355.1997.jpg")
 st.markdown('Dataset :')
 data=pd.read_csv("day_wise.csv.xls")
 
