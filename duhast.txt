@@ -1,7 +1,0 @@
-streamlit 
- pandas
- numpy 
- pickle  
- base64 
- matplotlib
- scikit-learn
