@@ -32,7 +32,7 @@ data=pd.read_csv("day_wise.csv.xls")
 dt1 = data.drop(["Date"], axis=1)
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
-sc.fit(dt)
+sc.fit(dt1)
 dtt = sc.transform(dt1)
 dt1 = pd.DataFrame(dtt, columns=dt.columns)
 d = pd.concat([data["Date"], dt1], axis=1)
