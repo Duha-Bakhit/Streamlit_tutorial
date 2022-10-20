@@ -29,10 +29,8 @@ st.image("COVID.png")
 st.markdown('Dataset :')
 data=pd.read_csv("day_wise.csv.xls")
 
-
 dt = data.drop(["Date"], axis=1)
 from sklearn.preprocessing import StandardScaler
-
 sc = StandardScaler()
 sc.fit(dt)
 dtt = sc.transform(dt)
