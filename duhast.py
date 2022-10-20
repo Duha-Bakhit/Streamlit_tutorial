@@ -64,5 +64,3 @@ agree= st.button("click to see maps chart")
 if agree:
     st.markdown("General maps Chart for standardized data Chart of various Attributes")
     st.map(dt)
-
-
