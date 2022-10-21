@@ -56,6 +56,7 @@ if agree:
 agree= st.button("click to see box plot")
 if agree:
     st.markdown("General boxplot for standardized data Chart of various Attributes")
-    st.boxplot(dt)
+    st.plotly_chart(dt)
+    
 
 
