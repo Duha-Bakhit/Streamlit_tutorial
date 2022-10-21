@@ -34,16 +34,13 @@ dt = data.drop(["Date"], axis=1)
 st.write(data.head())
 st.markdown("General Bar Chart for standardized data of various Attributes")
 st.bar_chart(dt)
-import matplotlib.pyplot as plt
 
 
 
 agree= st.button("click to see Histogram")
 if agree:
     st.markdown("General Histogram for standardized data of various Attributes")
-    dt.hist()
-    plt.show()
-    st.pyplot()
+    histogra(dt)
     
     
 agree= st.button("click to see Area chart")
