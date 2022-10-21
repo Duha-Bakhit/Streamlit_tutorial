@@ -30,8 +30,8 @@ st.markdown('Dataset :')
 data=pd.read_csv("day_wise.csv.xls")
 
 dt1 = data.drop(["Date"], axis=1)
-from sklearn.preprocessing import StandardScaler
-sc = StandardScaler()
+import sklearn
+sc = preprocessing.StandardScaler()
 sc.fit(dt1)
 dtt = sc.transform(dt1)
 dt1 = pd.DataFrame(dtt, columns=dt.columns)
