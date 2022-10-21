@@ -40,7 +40,7 @@ st.bar_chart(dt)
 agree= st.button("click to see Histogram")
 if agree:
     st.markdown("General Histogram for standardized data of various Attributes")
-    histogram(dt)
+    st.histogram(dt)
     
     
 agree= st.button("click to see Area chart")
