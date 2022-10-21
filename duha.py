@@ -31,13 +31,6 @@ data=pd.read_csv("day_wise.csv.xls")
 
 
 dt = data.drop(["Date"], axis=1)
-import sklearn
-from sklearn import preprocessing
-sc = preprocessing.StandardScaler()
-sc.fit(dt)
-dtt = sc.transform(dt)
-dt = pd.DataFrame(dtt, columns=dt.columns)
-d = pd.concat([data["Date"], dt], axis=1)
 st.write(data.head())
 st.markdown("General Bar Chart for standardized data of various Attributes")
 st.bar_chart(dt)
@@ -60,6 +53,9 @@ if agree:
     st.markdown("General Line Chart for standardized data Chart of various Attributes")
     st.line_chart(dt)
     
-
+agree= st.button("click to see box plot")
+if agree:
+    st.markdown("General boxplot for standardized data Chart of various Attributes")
+    st.boxplot(dt)
 
 
