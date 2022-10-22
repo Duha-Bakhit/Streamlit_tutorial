@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import pickle  #to load a saved model
 import plotly.express as px
 
 st.title("DATA VISUALISATION ASSIGNMENT")
