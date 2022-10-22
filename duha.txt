@@ -2,8 +2,7 @@ streamlit==0.68.1
 pandas==0.25.3
 plotly==4.10.0
 jupyterlab==2.2.6
-express==1.0
-
+plotly_express
 
 base58==2.0.0
 lxml==4.5.1
