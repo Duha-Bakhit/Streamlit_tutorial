@@ -1,13 +1,13 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import pickle  #to load a saved model
-import base64  #to open .gif files in streamlit app
+import plotly.express as px
 
-st.write("Hello,This is my work on usa_county_wise Covid_19 Dataset") 
-st.title("PUD3106 ASSIGNMENT")
-st.header("DATA VISUALISATION")
-st.markdown("COUNTRY DATASET AVAILABLE ON KAGGLE")
+st.title("DATA VISUALISATION ASSIGNMENT")
+st.header("Coronavirus disease (COVID-19) APP")
+st.subheader("DAY WISE DATASET AVAILABLE ON KAGGLE")
+st.write("Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus. Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment. However, some will become seriously ill and require medical attention.") 
+st.write("The virus can spread from an infected person’s mouth or nose in small liquid particles when they cough, sneeze, speak, sing or breathe. These particles range from larger respiratory droplets to smaller aerosols. You can be infected by breathing in the virus if you are near someone who has COVID-19, or by touching a contaminated surface and then your eyes, nose or mouth. The virus spreads more easily indoors and in crowded settings.")
 st.code("2021/2022")
 
 @st.cache(suppress_st_warning=True)
@@ -28,7 +28,10 @@ st.title('Covid:')
 st.image("COVID.png")
 st.markdown('Dataset :')
 data=pd.read_csv("day_wise.csv.xls")
-
+numeric_columns = list(data.select_dtypes(['float', 'int']).columns)
+non_numeric_columns = list(data.select_dtypes(['object']).columns)
+non_numeric_columns.append(None)
+print(non_numeric_columns)
 
 dt = data.drop(["Date"], axis=1)
 st.write(data.head())
@@ -39,8 +42,14 @@ st.bar_chart(dt)
 
 agree= st.button("click to see Histogram")
 if agree:
-    st.markdown("General Histogram for standardized data of various Attributes")
-    histogram()
+    st.sidebar.subheader("Histogram Settings")
+    st.markdown('Histogram')
+    x = st.sidebar.selectbox('Feature', options=numeric_columns)
+    bin_size = st.sidebar.slider("Number of Bins", min_value=10,
+                                 max_value=100, value=40)
+    color_value = st.sidebar.selectbox("Colored", options=non_numeric_columns)
+    plot = px.histogram(x=x, data_frame=dt, color=color_value)
+    st.plotly_chart(plot)
     
     
 agree= st.button("click to see Area chart")
@@ -53,10 +62,10 @@ if agree:
     st.markdown("General Line Chart for standardized data Chart of various Attributes")
     st.line_chart(dt)
     
-agree= st.button("click to see box plot")
+agree= st.button("click to see Boxplot")
 if agree:
-    st.markdown("General boxplot for standardized data Chart of various Attributes")
-    st.plotly_chart(dt)
+    plot = px.box(data_frame=dt)
+    st.plotly_chart(plot)
     
 
 
