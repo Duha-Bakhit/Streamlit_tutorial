@@ -3,4 +3,6 @@ pandas==0.25.3
 plotly_express
 plotly==4.10.0
 jupyterlab==2.2.6
+express==1.0
+plotly==4.14.1
 
