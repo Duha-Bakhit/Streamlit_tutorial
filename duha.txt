@@ -6,3 +6,4 @@ plotly==5.10.0
 pickle
 base58==2.0.0
 lxml==4.5.1
+matplotlib==3.1.1
