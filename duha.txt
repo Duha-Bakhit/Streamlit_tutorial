@@ -1,6 +1,7 @@
 streamlit==0.68.1
 pandas==0.25.3
 jupyterlab==2.2.6
+plotly_express 
 plotly==5.10.0
 pickle
 base58==2.0.0
