@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+import plotly_express as px
 
 st.title("DATA VISUALISATION ASSIGNMENT")
 st.header("Coronavirus disease (COVID-19) APP")
