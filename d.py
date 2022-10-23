@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import pickle
-import matplotlib.pyplot as plt
+
 
 st.title("DATA VISUALISATION ASSIGNMENT")
 st.header("Coronavirus disease (COVID-19) APP")
