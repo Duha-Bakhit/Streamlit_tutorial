@@ -1,11 +1,7 @@
-streamlit==0.68.1
 pandas==0.25.3
+streamlit==0.65.2
 jupyterlab==2.2.6
-plotly_express==0.4.1
-plotly==5.10.0
-pickle
-base58==2.0.0
-lxml==4.5.1
-matplotlib==3.1.1
-pdoc3>=0.5.3
-nbconvert>=5.3.1
+bokeh==2.2.1
+plotly==4.10.0
+kaleido
+plotly_express
