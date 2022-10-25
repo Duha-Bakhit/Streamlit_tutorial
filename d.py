@@ -51,7 +51,7 @@ elif Chart_Taype=='Boxplot':
     plot = px.box(data_frame=dt)
     st.plotly_chart(plot)
     
-else Chart_Taype=='Histogram':
+elif Chart_Taype=='Histogram':
     st.sidebar.subheader("Histogram Settings")
     st.markdown('Histogram')
     x = st.sidebar.selectbox('Feature', options=numeric_columns)
