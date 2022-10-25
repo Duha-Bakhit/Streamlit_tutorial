@@ -37,10 +37,9 @@ st.write(data.head())
 st.markdown("General Bar Chart for standardized data of various Attributes")
 st.bar_chart(dt)
 
+Chart_Taype=st.selectbox('Choose the Chart Type',['Histogram','Area chart,'line chart','Boxplot'])
 
-
-agree= st.button("click to see Histogram")
-if agree:
+if Chart_Taype=='Histogram':
     st.sidebar.subheader("Histogram Settings")
     st.markdown('Histogram')
     x = st.sidebar.selectbox('Feature', options=numeric_columns)
@@ -51,18 +50,15 @@ if agree:
     st.plotly_chart(plot)
     
     
-agree= st.button("click to see Area chart")
-if agree:
+elif Chart_Taype=='Area Chart':
     st.markdown(" Area Chart for data of various Attributes")
     st.area_chart(dt)
 
-agree= st.button("click to see line chart")
-if agree:
+elif Chart_Taype=='line chart':
     st.markdown(" Line Chart for  data Chart of various Attributes")
     st.line_chart(dt)
     
-agree= st.button("click to see Boxplot")
-if agree:
+elif Chart_Taype=='Boxplot':
     plot = px.box(data_frame=dt)
     st.plotly_chart(plot)
     
