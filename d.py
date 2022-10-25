@@ -37,8 +37,7 @@ st.write(data.head())
 st.markdown("General Bar Chart for standardized data of various Attributes")
 st.bar_chart(dt)
 
-Chart_Taype=st.selectbox('Choose the Chart Type',('Histogram','Area chart,'line chart','Boxplot'))
-                                                          
+Chart_Taype=st.selectbox('Choose the Chart Type',('Histogram','Area chart','line chart','Boxplot'))
 if Chart_Taype=='Histogram':
     st.sidebar.subheader("Histogram Settings")
     st.markdown('Histogram')
