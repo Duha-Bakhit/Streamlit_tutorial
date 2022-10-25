@@ -24,7 +24,6 @@ def get_value(val,my_dict):
 
 
 
-st.title('Covid:')
 st.image("COVID.png")
 st.markdown('Dataset :')
 data=pd.read_csv("day_wise.csv.xls")
