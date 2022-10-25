@@ -36,7 +36,7 @@ dt = data.drop(["Date"], axis=1)
 st.write(data.head())
 
 
-Chart_Taype=st.selectbox('Choose the Chart Type',('Bar Chart','Histogram','line chart','Boxplot'))
+Chart_Taype=st.selectbox('Choose the Chart Type',('line chart','Boxplot','Histogram','Bar Chart'))
 
 if Chart_Taype=='line chart':
     st.markdown(" Line Chart for  data Chart of various Attributes")
