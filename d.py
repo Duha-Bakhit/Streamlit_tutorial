@@ -39,13 +39,14 @@ st.bar_chart(dt)
 
 Chart_Taype=st.selectbox('Choose the Chart Type',('Histogram','Area chart','line chart','Boxplot'))
 
-if Chart_Taype=='Area Chart':
+if Chart_Taype=='line chart':
+    st.markdown(" Line Chart for  data Chart of various Attributes")
+    st.line_chart(dt)
+    
+elif Chart_Taype=='Area Chart':
     st.markdown(" Area Chart for data of various Attributes")
     st.area_chart(dt)
 
-elif Chart_Taype=='line chart':
-    st.markdown(" Line Chart for  data Chart of various Attributes")
-    st.line_chart(dt)
     
 elif Chart_Taype=='Boxplot':
     plot = px.box(data_frame=dt)
