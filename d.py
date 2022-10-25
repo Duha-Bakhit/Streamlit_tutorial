@@ -34,10 +34,9 @@ print(non_numeric_columns)
 
 dt = data.drop(["Date"], axis=1)
 st.write(data.head())
-st.markdown("General Bar Chart for standardized data of various Attributes")
-st.bar_chart(dt)
 
-Chart_Taype=st.selectbox('Choose the Chart Type',('Histogram','Area chart','line chart','Boxplot'))
+
+Chart_Taype=st.selectbox('Choose the Chart Type',('Bar Chart','Histogram','Area chart','line chart','Boxplot'))
 
 if Chart_Taype=='line chart':
     st.markdown(" Line Chart for  data Chart of various Attributes")
@@ -47,6 +46,13 @@ elif Chart_Taype=='Area Chart':
     st.markdown(" Area Chart for data of various Attributes")
     st.area_chart(dt)
 
+elif Chart_Taype=='Area Chart':
+    st.markdown(" Bar Chart for data of various Attributes")
+    st.bar_chart(dt)
+    
+elif Chart_Taype=='Bar Chart':
+    st.markdown("Bar Chart for data of various Attributes")
+    st.bar_chart(dt)
     
 elif Chart_Taype=='Boxplot':
     plot = px.box(data_frame=dt)
