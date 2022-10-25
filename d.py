@@ -38,18 +38,8 @@ st.markdown("General Bar Chart for standardized data of various Attributes")
 st.bar_chart(dt)
 
 Chart_Taype=st.selectbox('Choose the Chart Type',('Histogram','Area chart','line chart','Boxplot'))
-if Chart_Taype=='Histogram':
-    st.sidebar.subheader("Histogram Settings")
-    st.markdown('Histogram')
-    x = st.sidebar.selectbox('Feature', options=numeric_columns)
-    bin_size = st.sidebar.slider("Number of Bins", min_value=10,
-                                 max_value=100, value=40)
-    color_value = st.sidebar.selectbox("Colored", options=non_numeric_columns)
-    plot = px.histogram(x=x, data_frame=data, color=color_value)
-    st.plotly_chart(plot)
-    
-    
-elif Chart_Taype=='Area Chart':
+
+if Chart_Taype=='Area Chart':
     st.markdown(" Area Chart for data of various Attributes")
     st.area_chart(dt)
 
@@ -61,5 +51,12 @@ elif Chart_Taype=='Boxplot':
     plot = px.box(data_frame=dt)
     st.plotly_chart(plot)
     
-
+else Chart_Taype=='Histogram':
+    st.sidebar.subheader("Histogram Settings")
+    st.markdown('Histogram')
+    x = st.sidebar.selectbox('Feature', options=numeric_columns)
+    bin_size = st.sidebar.slider("Number of Bins", min_value=10, max_value=100, value=40)
+    color_value = st.sidebar.selectbox("Colored", options=non_numeric_columns)
+    plot = px.histogram(x=x, data_frame=data, color=color_value)
+    st.plotly_chart(plot)
 
