@@ -52,12 +52,12 @@ if agree:
     
 agree= st.button("click to see Area chart")
 if agree:
-    st.markdown("General Area Chart for standardized data of various Attributes")
+    st.markdown(" Area Chart for data of various Attributes")
     st.area_chart(dt)
 
 agree= st.button("click to see line chart")
 if agree:
-    st.markdown("General Line Chart for standardized data Chart of various Attributes")
+    st.markdown(" Line Chart for  data Chart of various Attributes")
     st.line_chart(dt)
     
 agree= st.button("click to see Boxplot")
