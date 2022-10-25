@@ -64,3 +64,8 @@ elif Chart_Taype=='Histogram':
     plot = px.histogram(x=x, data_frame=data, color=color_value)
     st.plotly_chart(plot)
 
+st.header("Thank You For Visiting")
+st.write("Duha Bakhit")
+
+         
+         
